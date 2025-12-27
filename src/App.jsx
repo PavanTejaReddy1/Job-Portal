@@ -18,6 +18,7 @@ function App() {
         <Route path="/" element={<Home searchInput={searchInput} filterInput={filterInput} />} />
         <Route path="/jobs/:id" element={<JobDetails />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/*" element={<h1>404 Not Found</h1>}></Route>
       </Routes>
       <ToastContainer />
     </BrowserRouter>
