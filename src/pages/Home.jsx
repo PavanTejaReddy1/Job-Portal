@@ -1,9 +1,8 @@
-import React from "react";
-import { jobs } from "../data/jobs";
+import React, { useState } from "react";
 import JobCard from "../components/JobCard";
 
-function Home({searchInput, filterInput}) {
-
+function Home({searchInput, filterInput, jobs}) {
+  
   const filteredJobs = jobs.filter((job) => job.title.toLowerCase().includes(searchInput.toLowerCase().trim()) && job.location.toLowerCase().includes(filterInput.toLowerCase().trim()));
 
   return (

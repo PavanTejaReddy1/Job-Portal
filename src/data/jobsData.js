@@ -1,4 +1,4 @@
-export const jobs = [
+export const jobsData = [
   {
     id: 1,
     title: "Frontend Developer",
@@ -12,7 +12,7 @@ export const jobs = [
     id: 2,
     title: "React Developer",
     company: "Cloudify",
-    location: "Remote",
+    location: "India",
     type: "Remote",
     package: "8 LPA",
     description: "Build modern UI using React."
