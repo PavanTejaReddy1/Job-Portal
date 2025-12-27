@@ -15,11 +15,8 @@ A modern and responsive job portal built using React and Tailwind CSS.
 - JavaScript (ES6+)
 - React Router
 
-## 🌐 Live Demo
-https://your-vercel-link.vercel.app
-
 ## 📂 GitHub Repository
-https://github.com/your-username/job-portal
+https://github.com/PavanTejaReddy1/job-portal
 
 ## 📌 Installation
 ```bash
