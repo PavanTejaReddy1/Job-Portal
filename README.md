@@ -18,6 +18,9 @@ A modern and responsive job portal built using React and Tailwind CSS.
 ## 📂 GitHub Repository
 https://github.com/PavanTejaReddy1/job-portal
 
+## 🌐 Live Demo
+https://jobportal199.netlify.app/
+
 ## 📌 Installation
 ```bash
 npm install
