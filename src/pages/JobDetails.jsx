@@ -31,7 +31,7 @@ function JobDetails() {
   return (
     <div className="flex flex-col justify-center items-center">
     <div className="flex gap-5">
-      <div className="p-6 bg-gray-200 w-[500px] m-5 rounded shadow-lg">
+      <div className="p-6 bg-gray-200 w-full max-w-[500px] m-5 rounded shadow-lg">
         <div className="p-6 bg-white rounded-2xl">
           <p className="font-bold">Role: </p>
           <h1 className="text-2xl">{job.title}</h1>

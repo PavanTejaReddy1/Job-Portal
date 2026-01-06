@@ -42,7 +42,7 @@ function EditJob({job, jobs, setJobs}) {
   return (
     <>
         <button className="bg-blue-500 text-white pl-2 pr-2 rounded-lg text-sm cursor-pointer hover:bg-blue-600" onClick={()=>setOpen(true)}>Edit</button>
-        <Modal isOpen={isOpen} className="w-[500px] absolute top-[20%] left-[40%] p-[20px] bg-white">
+        <Modal isOpen={isOpen} className="w-[90%] max-w-[500px] mx-auto mt-20 p-5 bg-white roundeds">
             <IoClose size={30} className="cursor-pointer hover:bg-black hover:rounded-full hover:text-white" onClick={()=>setOpen(false)}/>
 
             <h1 className="mx-auto relative  text-2xl font-bold underline w-[100px]">Edit Job</h1>

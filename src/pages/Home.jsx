@@ -10,13 +10,13 @@ function Home({searchInput, filterInput, jobs}) {
     { filteredJobs.length > 0 ?
     <div className="text-center">
       <h1 className="font-bold text-3xl underline">Jobs</h1>
-      <div className="p-6 grid md:grid-cols-2 gap-4">
+      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
         {filteredJobs.map(job => (
           <JobCard key={job.id} job={job} />
         ))}
       </div>
     </div>
-    : <p className="text-2xl font-bold m-5">No Jobs Found. Try a different search.</p>}
+    : <p className="text-2xl font-bold m-5">No Jobs Found.</p>}
     </div>
   );
 }

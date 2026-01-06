@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function JobCard({ job }) {
   return (
     <div className="border p-4 rounded shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all duration-200">
-      <h2 className="text-xl font-semibold">{job.title}</h2>
+      <h2 className="text-lg sm:text-xl font-semibold">{job.title}</h2>
       <p>{job.company}</p>
       <p className="text-lg text-gray-600">{job.package}</p>
       <p className="text-sm text-gray-500">{job.location}</p>
