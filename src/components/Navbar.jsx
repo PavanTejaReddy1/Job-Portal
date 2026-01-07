@@ -10,7 +10,7 @@ function Navbar({searchInput, setSerachInput, filterInput, setFilterInput}) {
         <input type="text" className="bg-white w-full md:w-[400px] rounded text-xl p-2 text-black" placeholder="Search by role" onChange={(e)=>setSerachInput(e.target.value)} value={searchInput}/>
         <input type="text" className="bg-white w-full md:w-[400px] rounded text-xl p-2 text-black" placeholder="Filter by location" onChange={(e)=>setFilterInput(e.target.value)} value={filterInput}/>
       </div>
-      <div className="space-x-4 font-bold text-xl">
+      <div className="space-x-4 font-bold text-xl mt-4 md:mt-0">
         <NavLink to="/" className={({isActive}) => isActive ? "border-1 p-1 rounded" : ""}>Jobs</NavLink>
         <NavLink to="/admin" className={({isActive}) => isActive ? "border-1 p-1 rounded" : ""}>Admin</NavLink>
       </div>
