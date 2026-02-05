@@ -32,9 +32,24 @@ function Navbar({ searchInput, setSerachInput, filterInput, setFilterInput }) {
           <option value="Remote">Remote</option>
         </select>
       </div>
-      <div className="space-x-4 font-bold text-xl">
-        <NavLink to="/" className={({isActive}) => isActive ? "border-1 p-1 rounded" : ""}>Jobs</NavLink>
-        <NavLink to="/admin" className={({isActive}) => isActive ? "border-1 p-1 rounded" : ""}>Admin</NavLink>
+
+      <div className="flex gap-4 font-semibold text-lg">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "border-b-2 border-white pb-1" : "opacity-80 hover:opacity-100"
+          }
+        >
+          Jobs
+        </NavLink>
+        <NavLink
+          to="/admin"
+          className={({ isActive }) =>
+            isActive ? "border-b-2 border-white pb-1" : "opacity-80 hover:opacity-100"
+          }
+        >
+          Admin
+        </NavLink>
       </div>
     </nav>
   );
