@@ -29,34 +29,46 @@ function JobDetails() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center">
-    <div className="flex gap-5">
-      <div className="p-6 bg-gray-200 w-full max-w-[500px] m-5 rounded shadow-lg">
-        <div className="p-6 bg-white rounded-2xl">
-          <p className="font-bold">Role: </p>
-          <h1 className="text-2xl">{job.title}</h1>
-          <p className="font-bold">Company Name: </p>
-          <p>{job.company}</p>
-          <p className="font-bold">Location: </p>
-          <p>{job.location}</p>
-          <p className="font-bold">Type: </p>
-          <p>{job.type}</p>
-          <p className="font-bold">Package: </p>
-          <p>{job.package}</p>
-          <p className="font-bold mt-4">Skills Required: </p>
-          <p>{job.description}</p>
+    <div className="max-w-5xl mx-auto px-6 py-10">
+      <div className="bg-white rounded-2xl shadow-xl p-8">
+        <h1 className="text-3xl font-bold mb-2">{job.title}</h1>
+        <p className="text-gray-600 text-lg">{job.company}</p>
+
+        <div className="grid grid-cols-2 gap-4 mt-6 text-sm">
+          <p><strong>Location:</strong> {job.location}</p>
+          <p><strong>Type:</strong> {job.type}</p>
+          <p><strong>Package:</strong> {job.package}</p>
         </div>
 
-        <form onSubmit={applayJob} className="mt-6 space-y-4">
-          <input type="text" placeholder="Your Name" className="border p-2 w-full rounded bg-white" required/>
-          <input type="email" placeholder="Your Email"  className="border p-2 w-full rounded bg-white" required/>
-          <input type="text" placeholder="Resume drive link" className="border p-2 w-full rounded bg-white" required/>
-          <input type="submit" value="Apply" className="bg-blue-500 p-1 rounded text-white text-lg pl-2 pr-2 mt-5 hover:bg-blue-600 cursor-pointer font-bold w-full"/>
+        <div className="mt-6">
+          <h2 className="font-semibold text-lg mb-2">Description</h2>
+          <p className="text-gray-700">{job.description}</p>
+        </div>
+
+        <form
+          onSubmit={applayJob}
+          className="mt-8 space-y-4 bg-gray-50 p-6 rounded-xl"
+        >
+          <h2 className="font-bold text-xl">Apply Now</h2>
+
+          <input className="w-full border rounded-lg p-2" placeholder="Your Name" required />
+          <input className="w-full border rounded-lg p-2" placeholder="Your Email" required />
+          <input className="w-full border rounded-lg p-2" placeholder="Resume Link" required />
+
+          <button className="w-full bg-blue-600 text-white py-2 rounded-lg font-bold hover:bg-blue-700 transition cursor-pointer">
+            Apply
+          </button>
         </form>
       </div>
+
+      <button
+        onClick={() => navigate("/")}
+        className="mt-6 text-red-600 font-semibold hover:underline cursor-pointer"
+      >
+        ← Back to Jobs
+      </button>
     </div>
-    <button className="m-5 bg-red-500 p-1 pl-2 pr-2 text-white rounded shadow-lg hover:bg-red-600 cursor-pointer font-bold" onClick={()=>navigate("/")}>Back to Home</button>
-    </div>
+
   );
 }
 export default JobDetails;

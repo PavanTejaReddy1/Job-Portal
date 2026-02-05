@@ -5,14 +5,14 @@ import { jobsData } from "../data/jobsData";
 import { toast } from "react-toastify";
 import EditJob from "../components/EditJob";
 
-function Admin({jobs, setJobs}) {
+function Admin({ jobs, setJobs }) {
 
   function deleteJob(id) {
     const newData = jobs.filter(job => job.id !== id);
     setJobs([...newData]);
 
-    const job = jobs.find((j)=>j.id == id);
-    
+    const job = jobs.find((j) => j.id == id);
+
     toast.error(`${job.title} deleted successfully`, {
       position: "top-right",
       autoClose: 2000,
@@ -26,26 +26,33 @@ function Admin({jobs, setJobs}) {
   }
 
   return (
-    <div className="p-6">
-      <div className="flex justify-between">
-        <h1 className="text-xl font-bold mb-4">Admin Panel</h1>
-        <div className="relative">
-          <AddJob setJobs={setJobs} />
-        </div>
+    <div className="max-w-6xl mx-auto px-6 py-6">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold tracking-wide">Admin Dashboard</h1>
+        <AddJob setJobs={setJobs} />
       </div>
 
-      {jobs.map(job => (
-        <div key={job.id} className="border p-3 mb-2 flex flex-col sm:flex-row sm:justify-between gap-2 hover:scale-[1.01] shadow-xl duration-200"s>
-          <span className="font-medium text-center sm:text-left">
-            {job.title}
-          </span>
-          <div className="flex gap-2">
-            <EditJob job={job} jobs={jobs} setJobs={setJobs}/>
-            <IoClose onClick={() => deleteJob(job.id)} className="text-red-600 cursor-pointer hover:bg-red-500 hover:text-white hover:rounded hover:pl-1 hover:pr-1" size={30} />
+      <div className="bg-white rounded-xl shadow-lg divide-y">
+        {jobs.map(job => (
+          <div
+            key={job.id}
+            className="flex justify-between items-center p-4 hover:bg-gray-50 transition"
+          >
+            <span className="font-medium text-lg">{job.title}</span>
+
+            <div className="flex gap-3 items-center">
+              <EditJob job={job} jobs={jobs} setJobs={setJobs} />
+              <IoClose
+                onClick={() => deleteJob(job.id)}
+                className="text-red-500 cursor-pointer hover:text-white hover:bg-red-500 rounded-full p-1 transition"
+                size={28}
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
+
   );
 }
 export default Admin;

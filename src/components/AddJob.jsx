@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import { jobsData } from '../data/jobsData';
 import { toast } from "react-toastify";
 
-function AddJob({setJobs}) {
+function AddJob({ setJobs }) {
     const [isOpen, setOpen] = useState(false);
 
     function handleSubmit(e) {
@@ -19,13 +19,13 @@ function AddJob({setJobs}) {
         const jobDescription = e.target[5].value;
 
         const newJob = {
-            id : crypto.randomUUID(),
-            title : jobRole,
-            company : companyName,
-            location : jobLocation,
-            type : jobType,
-            package : jobPackage,
-            description : jobDescription
+            id: crypto.randomUUID(),
+            title: jobRole,
+            company: companyName,
+            location: jobLocation,
+            type: jobType,
+            package: jobPackage,
+            description: jobDescription
         }
 
         toast.success(`${jobRole} Added successfully`, {
@@ -44,31 +44,52 @@ function AddJob({setJobs}) {
         setOpen(false);
     }
 
-  return (
-    <>
-    <IoMdAdd size={30} className="cursor-pointer hover:bg-black hover:rounded-full hover:text-white" onClick={()=>setOpen(true)}/>
-    <Modal isOpen={isOpen} className="w-[90%] max-w-[500px] mx-auto mt-20 p-5 bg-white rounded">
-        <IoClose size={30} className="cursor-pointer hover:bg-black hover:rounded-full hover:text-white" onClick={()=>setOpen(false)}/>
+    return (
+        <>
+            <IoMdAdd size={30} className="cursor-pointer hover:bg-black hover:rounded-full hover:text-white" onClick={() => setOpen(true)} />
+            <Modal
+                isOpen={isOpen}
+                className="max-w-lg mx-auto mt-20 bg-white rounded-2xl shadow-2xl p-6"
+            >
+                <div className="flex justify-between items-center mb-4">
+                    <h1 className="text-2xl font-bold">Add Job</h1>
+                    <IoClose
+                        size={26}
+                        className="cursor-pointer hover:text-red-500"
+                        onClick={() => setOpen(false)}
+                    />
+                </div>
 
-        <h1 className="mx-auto relative  text-2xl font-bold underline w-[100px]">Add Job</h1>
-        <form className="flex flex-col m-[30px]" onSubmit={handleSubmit}>
-            <label htmlFor="title" className="font-bold">Role:</label>
-            <input id="title" type="text" className="border rounded p-1 pl-1" placeholder="Role" required/>
-            <label htmlFor="company" className="font-bold">Company:</label>
-            <input id="company" type="text" className="border rounded p-1 pl-1" placeholder="Company Name" required/>
-            <label htmlFor="location" className="font-bold">location:</label>
-            <input id="location" type="text" className="border rounded p-1 pl-1" placeholder="Job Location" required/>
-            <label htmlFor="type" className="font-bold">Type:</label>
-            <input id="type" type="text" className="border rounded p-1 pl-1" placeholder="Fulltime/Remote" required/>
-            <label htmlFor="package" className="font-bold">Package:</label>
-            <input id="type" type="text" className="border rounded p-1 pl-1" placeholder="Package" required/>
-            <label htmlFor="description" className="font-bold">Description:</label>
-            <input id="description" type="text" className="border rounded p-1 pl-1" placeholder="Job Description" required/>
-            <input type="submit" value="submit" className="mt-2 bg-green-500 text-white p-1 rounded hover:bg-green-400 cursor-pointer text-lg" />
-        </form>
-    </Modal>
-    </>
-  )
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                    {[
+                        "Role",
+                        "Company",
+                        "Location",
+                        "Type",
+                        "Package",
+                        "Description"
+                    ].map((label, i) => (
+                        <div key={i}>
+                            <label className="font-semibold">{label}</label>
+                            <input
+                                className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-400 outline-none"
+                                placeholder={label}
+                                required
+                            />
+                        </div>
+                    ))}
+
+                    <button
+                        type="submit"
+                        className="w-full bg-green-500 text-white py-2 rounded-lg font-bold hover:bg-green-600 transition cursor-pointer"
+                    >
+                        Submit
+                    </button>
+                </form>
+            </Modal>
+
+        </>
+    )
 }
 
 export default AddJob
