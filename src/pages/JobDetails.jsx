@@ -55,7 +55,7 @@ function JobDetails() {
           <input className="w-full border rounded-lg p-2" placeholder="Your Email" required />
           <input className="w-full border rounded-lg p-2" placeholder="Resume Link" required />
 
-          <button className="w-full bg-blue-600 text-white py-2 rounded-lg font-bold hover:bg-blue-700 transition cursor-pointer">
+          <button className="w-full bg-blue-600 text-white py-2 rounded-lg font-bold hover:bg-blue-700 transition">
             Apply
           </button>
         </form>

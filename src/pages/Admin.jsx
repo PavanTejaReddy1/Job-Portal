@@ -1,7 +1,6 @@
 import React from "react";
 import AddJob from "../components/AddJob";
 import { IoClose } from "react-icons/io5";
-import { jobsData } from "../data/jobsData";
 import { toast } from "react-toastify";
 import EditJob from "../components/EditJob";
 
